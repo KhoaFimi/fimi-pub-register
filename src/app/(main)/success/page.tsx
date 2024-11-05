@@ -11,6 +11,7 @@ import {
 	CardHeader,
 	CardTitle
 } from '@/components/ui/card'
+import Link from 'next/link'
 
 type SearchParams = Promise<{ data: string }>
 
@@ -73,10 +74,17 @@ const SuccessPage: FC<SuccessPageProps> = async ({ searchParams }) => {
 				</CardContent>
 				<CardFooter className='flex flex-col gap-8'>
 					<div className='flex w-full items-center justify-between'>
-						<Button className='bg-gradient-to-tr from-primary from-30% to-secondary shadow-md'>
-							Lên đơn đầu tiên
+						<Button
+							className='bg-gradient-to-tr from-primary from-30% to-secondary shadow-md'
+							asChild
+						>
+							<Link href='https://partner.fimi.tech/chien-dich'>
+								Lên đơn đầu tiên
+							</Link>
 						</Button>
-						<Button variant='outline'>Trang chủ</Button>
+						<Button variant='outline'>
+							<Link href='https://www.fimi.tech/trang-chu'>Trang chủ</Link>
+						</Button>
 					</div>
 					<p className='select-none text-center text-xs font-bold text-foreground/50'>
 						Công Ty TNHH Công Nghệ FIMI
