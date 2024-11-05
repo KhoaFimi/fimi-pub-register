@@ -49,7 +49,7 @@ const SuccessPage: FC<SuccessPageProps> = async ({ searchParams }) => {
 						</div>
 
 						<div className='space-y-2 rounded-lg border border-dashed border-primary p-2'>
-							<p className='text-sm text-foreground/80'>
+							<p className='text-justify text-sm text-foreground/80'>
 								<span>
 									<Image
 										src='/logo.png'
@@ -60,13 +60,13 @@ const SuccessPage: FC<SuccessPageProps> = async ({ searchParams }) => {
 									/>
 								</span>{' '}
 								sẽ gửi thông tin về mã chiến dịch đến email :{' '}
-								<span className='font-semibold italic'>
-									&apos;{email}&apos;
+								<span className='font-semibold italic text-secondary'>
+									{email}
 								</span>{' '}
 								hãy kiểm tra email để nhận mã chiến dịch đã đăng ký
 							</p>
-							<p className='text-sm text-foreground/80'>
-								Nếu không tìm thấy mail phản hổi, hãy thử tìm trong mục spam
+							<p className='text-justify text-sm text-foreground/80'>
+								Nếu không tìm thấy mail phản hồi, hãy thử tìm trong mục spam
 							</p>
 						</div>
 					</div>
