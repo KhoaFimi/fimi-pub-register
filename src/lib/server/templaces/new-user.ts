@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+export const newUserMailTemplate = ({
+	code,
+	name,
+	date,
+	phone
+}: {
+	code: string
+	phone: string
+	name: string
+	date: string
+}) => {
+	return `
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -79,7 +91,7 @@
                                 font-weight: 900;
                                 line-height: 0;
                             ">
-            <%= code %>
+            ${code}
           </p>
         </div>
       </div>
@@ -92,17 +104,17 @@
       <div style="margin-left: 15px;">
         <p style="font-size: 13px; font-weight: 500;">Họ và tên:
           <span style="font-weight: bold;">
-            <%= name %>
+            ${name}
           </span>
         </p>
         <p style="font-size: 13px; font-weight: 500;">Số điện thoại:
           <span style="font-weight: bold;">
-            <%= phone %>
+            ${phone}
           </span>
         </p>
         <p style="font-size: 13px; font-weight: 500;">Ngày đăng ký:
           <span style="font-weight: bold;">
-            <%= date %>
+            ${date}
           </span>
         </p>
       </div>
@@ -147,3 +159,5 @@
 </body>
 
 </html>
+  `
+}

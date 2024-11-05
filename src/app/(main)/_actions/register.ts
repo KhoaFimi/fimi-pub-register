@@ -1,13 +1,12 @@
 'use server'
 
 import { formatInTimeZone } from 'date-fns-tz'
-import * as ejs from 'ejs'
 import { redirect } from 'next/navigation'
-import * as path from 'path'
 
 import { genCode, genId } from '@/lib/server/gen-id'
 import { getSheets } from '@/lib/server/google-sheets'
 import { mailer } from '@/lib/server/mailer'
+import { newUserMailTemplate } from '@/lib/server/templaces/new-user'
 import { registerSchema, RegistrerSchema } from '@/schema/register.schema'
 
 export const register = async (values: RegistrerSchema) => {
@@ -103,13 +102,11 @@ export const register = async (values: RegistrerSchema) => {
 		}
 	})
 
-	const pathFile = path.join(__dirname, '../../../emails/new-user.ejs')
-
-	const plate = await ejs.renderFile(pathFile, {
+	const template = newUserMailTemplate({
 		name: body.fullname,
 		phone: body.phone,
 		date: timestamp,
-		code: code
+		code
 	})
 
 	const ccMail = String(partners[invalidPartnerCode][3]).split(',')
@@ -119,7 +116,7 @@ export const register = async (values: RegistrerSchema) => {
 
 	await mail.sendMail({
 		subject: 'FIMI TECH - Thông tin Publisher',
-		html: plate,
+		html: template,
 		text: code,
 		from: `FIMI ${process.env.ADMIN_EMAIL_ADDRESS}`,
 		to: body.email,
