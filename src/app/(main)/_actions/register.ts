@@ -103,7 +103,7 @@ export const register = async (values: RegistrerSchema) => {
 		}
 	})
 
-	const pathFile = path.join(__dirname, '../../../../emails/new-user.ejs')
+	const pathFile = path.join(__dirname, '../../../../src/emails/new-user.ejs')
 
 	const plate = await ejs.renderFile(pathFile, {
 		name: body.fullname,
