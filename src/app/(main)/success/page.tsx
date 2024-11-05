@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { FC } from 'react'
 
 import CopyToClipboard from '@/app/(main)/_component/copy-to-clipboard'
@@ -11,7 +12,6 @@ import {
 	CardHeader,
 	CardTitle
 } from '@/components/ui/card'
-import Link from 'next/link'
 
 type SearchParams = Promise<{ data: string }>
 
