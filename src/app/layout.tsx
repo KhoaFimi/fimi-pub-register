@@ -1,9 +1,9 @@
 import '@/app/globals.css'
 
+import { Analytics } from '@vercel/analytics/react'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { FC, PropsWithChildren } from 'react'
-import { Analytics } from '@vercel/analytics/react'
 
 import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
