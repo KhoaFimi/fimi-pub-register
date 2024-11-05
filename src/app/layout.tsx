@@ -3,6 +3,7 @@ import '@/app/globals.css'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { FC, PropsWithChildren } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 
 import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
@@ -23,6 +24,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 			<body className={cn('antialiased', font.className)}>
 				<QueryProvider>{children}</QueryProvider>
 				<Toaster />
+				<Analytics />
 			</body>
 		</html>
 	)
