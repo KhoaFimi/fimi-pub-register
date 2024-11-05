@@ -124,5 +124,7 @@ export const register = async (values: RegistrerSchema) => {
 		bcc: bccMail
 	})
 
-	redirect(`/success?email=${body.email}&code=${code}`)
+	const encodeParams = btoa([body.email, code].join(','))
+
+	redirect(`/success?data=${encodeParams}`)
 }

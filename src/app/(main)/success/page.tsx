@@ -12,14 +12,16 @@ import {
 	CardTitle
 } from '@/components/ui/card'
 
-type SearchParams = Promise<{ email: string; code: string }>
+type SearchParams = Promise<{ data: string }>
 
 interface SuccessPageProps {
 	searchParams: SearchParams
 }
 
 const SuccessPage: FC<SuccessPageProps> = async ({ searchParams }) => {
-	const { email, code } = await searchParams
+	const { data } = await searchParams
+
+	const [email, code] = atob(data).split(',')
 
 	return (
 		<div className='flex h-screen justify-center'>
