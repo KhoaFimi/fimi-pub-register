@@ -78,7 +78,7 @@ const Footer = () => {
 								alt='facebook-logo'
 								width={512}
 								height={512}
-								className='w-10 md:w-12'
+								className='w-10'
 							/>
 						</Link>
 						<Link href='https://www.facebook.com/fimipubs'>
@@ -87,7 +87,7 @@ const Footer = () => {
 								alt='youtube-logo'
 								width={512}
 								height={512}
-								className='w-10 md:w-12'
+								className='w-10'
 							/>
 						</Link>
 						<Link href='https://www.facebook.com/fimipubs'>
@@ -96,7 +96,19 @@ const Footer = () => {
 								alt='tiktok-logo'
 								width={512}
 								height={512}
-								className='w-10 md:w-12'
+								className='w-10'
+							/>
+						</Link>
+						<Link
+							href='https://zalo.me/349258862182110585'
+							className='rounded-full bg-white p-2'
+						>
+							<Image
+								src='/brand/zalo.png'
+								alt='zalo-logo'
+								width={512}
+								height={512}
+								className='w-6'
 							/>
 						</Link>
 					</div>
