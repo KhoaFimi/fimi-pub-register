@@ -31,7 +31,7 @@ const Header = () => {
 						width={3148}
 						height={1367}
 						alt='logo'
-						className='w-28'
+						className='w-20'
 					/>
 				</Link>
 				<nav className='flex items-center'>
@@ -40,7 +40,7 @@ const Header = () => {
 							asChild
 							variant='link'
 							key={link.id}
-							className='text-lg font-bold text-white'
+							className='text-base font-semibold tracking-tight text-white'
 						>
 							<Link href={link.href}>{link.label}</Link>
 						</Button>
